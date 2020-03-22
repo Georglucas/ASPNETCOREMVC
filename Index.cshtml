@@ -1,0 +1,26 @@
+﻿@model HomeModel
+
+<table border="1">
+        <tr>
+            <td>Id</td>
+            <td>Nome</td>
+        </tr>
+
+        @{
+            foreach (var item in (List<HomeModel>)ViewBag.Lista)
+            {
+                <tr>
+                    <td>@item.Id.ToString()</td>
+                    <td>@item.Name.ToString()</td>
+                </tr>
+            }
+        }
+</table>
+
+<form asp-controller="Home" asp-action="Index" method="post">
+    <input type="text" asp-for="Id" /><br />
+    <input type="text" asp-for="Name" /><br />
+    <input type="submit" value="OK" />
+
+
+</form>
